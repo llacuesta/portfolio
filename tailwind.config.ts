@@ -24,6 +24,14 @@ const config = {
       primary: "var(--font-jetbrainsMono)",
     },
     extend: {
+      colors: {
+        light: "#64748b",
+        dark: "#0f172a",
+        accent: {
+          DEFAULT: "#cbd5e1",
+          hover: "#0f172a"
+        },
+      },
       keyframes: {
         "accordion-down": {
           from: { height: "0" },
