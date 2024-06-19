@@ -23,7 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={jetbrains.className + " flex min-h-screen flex-col"}>
+      <body className={jetbrains.className + " flex min-h-screen flex-col md:pt-24 h-[5000px]"}> 
         <Header />
         {children}
       </body>

@@ -6,4 +6,8 @@
   body {
     @apply font-primary;
   }
+  
+  html {
+    @apply scroll-smooth;
+  }
 }
