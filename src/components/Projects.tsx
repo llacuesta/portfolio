@@ -20,14 +20,14 @@ import Link from "next/link";
 
 const Projects = () => {
   return (
-    <section className="m-16 flex flex-col items-center w-3/5">
+    <section className="md:m-16 my-16 mx-0 flex flex-col items-center w-3/5">
       <h2 className="text-3xl font-medium capitalize mb-8">My Projects</h2>
 
       <div className="flex flex-col gap-5">
         {projects.map((project, index) => {
           return (
-            <div key={index} className="border rounded-lg flex lg:flex-row lg:gap-5 flex-col">
-              <Card className="border-none flex flex-col" style={{ justifyContent: "space-between" }}>
+            <div key={index} className="border rounded-lg flex lg:flex-row flex-col group overflow-hidden">
+              <Card className="border-none lg:rounded-r-none rounded-b-none flex flex-col hover:bg-gray-200 transition" style={{ justifyContent: "space-between" }}>
                 <div>
                   <CardHeader>
                     <CardTitle>{project.title}</CardTitle>
@@ -98,7 +98,8 @@ const Projects = () => {
                 height="0"
                 sizes="100vw"
                 alt={project.title}
-                className="rounded-lg shadow-2xl object-cover w-auto lg:w-[60%] h-auto"
+                className="lg:rounded-l-none rounded-lg shadow-2xl object-cover w-auto lg:w-[60%] h-auto transition group-hover:scale-[1.05] lg:group-hover:-rotate-2"
+                style={{ zIndex: "-1" }}
               />
             </div>
           )
