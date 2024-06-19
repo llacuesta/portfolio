@@ -16,14 +16,14 @@ const Hero = () => {
 
         {/* Buttons */}
         <div className="flex flex-row gap-2">
-          <Button asChild className="flex items-center text-dark text-md bg-white rounded-full gap-2 hover:bg-dark hover:text-accent">
-            <Link href="#download">Résumé <HiDownload /></Link>
+          <Button asChild className="flex items-center text-dark text-md bg-white rounded-full gap-2 hover:bg-dark hover:text-accent hover:scale-110 active:scale-110">
+            <Link href="/Lacuesta_Resume.pdf">Résumé <HiDownload /></Link>
           </Button>
-          <Button className="flex items-center text-dark text-md bg-white rounded-full px-3 hover:bg-dark hover:text-accent">
-            <Link href="https://www.linkedin.com/in/lllacuesta/"><FaLinkedinIn /></Link>
+          <Button asChild className="flex items-center text-dark text-md bg-white rounded-full px-3 hover:bg-dark hover:text-accent hover:scale-110 active:scale-110">
+            <Link href="https://www.linkedin.com/in/lllacuesta/" target="_blank"><FaLinkedinIn /></Link>
           </Button>
-          <Button className="flex items-center text-dark text-md bg-white rounded-full px-3 hover:bg-dark hover:text-accent">
-            <Link href="https://github.com/llacuesta"><FaGithub /></Link>
+          <Button asChild className="flex items-center text-dark text-md bg-white rounded-full px-3 hover:bg-dark hover:text-accent hover:scale-110 active:scale-110">
+            <Link href="https://github.com/llacuesta" target="_blank"><FaGithub /></Link>
           </Button>
         </div>
       </div>

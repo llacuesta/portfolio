@@ -3,29 +3,7 @@
 // Imports
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-
-const links = [
-  {
-    name: "home",
-    path: "#home"
-  },
-  {
-    name: "projects",
-    path: "#projects"
-  },
-  {
-    name: "skills",
-    path: "#skills"
-  },
-  {
-    name: "experience",
-    path: "#experience"
-  },
-  {
-    name: "contact",
-    path: "#contact"
-  }
-] as const;
+import { links } from "@/lib/data";
 
 const Nav = () => {
   const pathName = usePathname();
