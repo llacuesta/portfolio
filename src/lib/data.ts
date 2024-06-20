@@ -248,9 +248,21 @@ export const skills = [
     ],
     span: true,
   },
-
-  
-  
-
-
 ] as const;
+
+export const experience = [
+  {
+    role: "Front End Web Developer Intern",
+    company: "LoPhils Inc.",
+    startYear: "July 2023",
+    endYear: "Aug 2023",
+    description: "Worked on the frontend of one of the company's web products (revamping the User Dashboard and translating the UI provided by the UI Designer for the Onboarding Experience)."
+  },
+  {
+    role: "College Education",
+    company: "University of The Philippines - Los Baños",
+    startYear: "June 2020",
+    endYear: "Present",
+    description: "Currently pursuing Bachelor of Science in Computer Science."
+  },
+]

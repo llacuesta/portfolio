@@ -12,10 +12,10 @@ const Skills = () => {
   });
 
   return (
-    <section ref={ref} id="skills" className="md:mx-16 mt-0 flex flex-col items-center w-4/5 scroll-mt-24">
+    <section ref={ref} id="skills" className="md:mx-16 mt-0 mb-16 flex flex-col items-center w-4/5 scroll-mt-24">
       <h2 className="text-3xl font-medium capitalize mb-8">My Skills</h2>
     
-      <div className="lg:grid lg:grid-cols-2 lg:grid-flow-row lg:gap-x-16 lg:gap-y-2 flex flex-col items-center gap-4">
+      <div className="lg:grid lg:grid-cols-2 lg:grid-flow-row lg:gap-x-16 lg:gap-y-0 flex flex-col items-center gap-4">
         {skills.map((section, index) => {
           return (
             <div key={index} className={`${section.span ? "flex flex-col items-center gap-5 p-4 col-span-2" : "flex flex-col items-center gap-5 p-4"}`}>
@@ -31,6 +31,7 @@ const Skills = () => {
                         sizes="100vw"
                         className="w-auto h-[72px]"
                         alt={skill.name}
+                        style={{ zIndex: "-60" }}
                       />
                       <span>{skill.name}</span>
                     </li>
