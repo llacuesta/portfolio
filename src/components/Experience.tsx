@@ -12,7 +12,7 @@ const Experience = () => {
 
   return (
     <section ref={ref} id="experience" className="md:mx-16 mt-0 flex flex-col items-center w-[55%] scroll-mt-24">
-      <h2 className="text-3xl font-medium capitalize mb-8">My Experience</h2>
+      <h2 className="text-3xl font-medium capitalize mb-8 text-center">My Experience</h2>
       
       <div>
         {experience.map((experience, index) => {
