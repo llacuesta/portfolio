@@ -1,7 +1,6 @@
 // Imports
 import { FaGithub } from "react-icons/fa";
 
-
 export const links = [
   {
     name: "home",
@@ -34,6 +33,10 @@ export const projects = [
         tech: "Next.js",
         icon: "/logos/next.svg",
       }, 
+      {
+        tech: "TypeScript",
+        icon: "/logos/typescript.svg",
+      },
       {
         tech: "Tailwind",
         icon: "/logos/tailwind.svg",
@@ -192,4 +195,62 @@ export const projects = [
       },
     ],
   },
+] as const;
+
+export const skills = [
+  { 
+    section: "Languages", 
+    skills: [
+      { name: "C", icon: "/logos/c.svg" },
+      { name: "Java", icon: "/logos/java.svg" },
+      { name: "Python", icon: "/logos/python.svg" },
+      { name: "JavaScript", icon: "/logos/js.svg" },
+      { name: "TypeScript", icon: "/logos/typescript.svg" },
+    ],
+    span: false,
+  },
+  {
+    section: "Front End Development", 
+    skills: [
+      { name: "HTML", icon: "/logos/html.svg" },
+      { name: "CSS", icon: "/logos/css.svg" },
+      { name: "React", icon: "/logos/react.svg" },
+      { name: "Next.js", icon: "/logos/next.svg" },
+      { name: "Tailwind", icon: "/logos/tailwind.svg" },
+    ],
+    span: false,
+  },
+  {
+    section: "Design", 
+    skills: [
+      { name: "Photoshop", icon: "/logos/ps.svg" },
+      { name: "Figma", icon: "/logos/figma.svg" },
+      { name: "Canva", icon: "/logos/canva.svg" },
+      { name: "Blender", icon: "/logos/blender.svg" },
+    ],
+    span: false,
+  },
+  {
+    section: "Back End and Databases", 
+    skills: [
+      { name: "Express.js", icon: "/logos/express.svg" },
+      { name: "Node.js", icon: "/logos/node.svg" },
+      { name: "MySQL", icon: "/logos/mysql.svg" },
+      { name: "MongoDB", icon: "/logos/mongodb.svg" },
+    ],
+    span: false,
+  },
+  {
+    section: "Version Control", 
+    skills: [
+      { name: "Git", icon: "/logos/git.svg" },
+      { name: "GitHub", icon: "/logos/github.svg" },
+    ],
+    span: true,
+  },
+
+  
+  
+
+
 ] as const;

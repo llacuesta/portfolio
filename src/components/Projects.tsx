@@ -27,7 +27,7 @@ const Projects = () => {
   });
 
   return (
-    <section ref={ref} id="projects" className="md:m-16 my-16 mx-0 flex flex-col items-center w-3/5 scroll-mt-24">
+    <section ref={ref} id="projects" className="md:m-16 my-16 mx-0 flex flex-col items-center md:w-3/5 w-4/5 scroll-mt-24">
       <h2 className="text-3xl font-medium capitalize mb-8">My Projects</h2>
 
       <div className="flex flex-col gap-5">
