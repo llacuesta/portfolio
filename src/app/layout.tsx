@@ -4,6 +4,7 @@ import "./globals.css";
 
 // Components
 import Header from "@/components/Header";
+import ActiveSectionContextProvider from "@/context/active-section-context";
 
 const jetbrains = JetBrains_Mono({ 
   subsets: ["latin"], 
@@ -22,10 +23,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="!scroll-smooth">
       <body className={jetbrains.className + " flex min-h-screen flex-col md:pt-24 h-[5000px]"}> 
-        <Header />
-        {children}
+        
+        <ActiveSectionContextProvider>
+          <Header />
+          {children}
+        </ActiveSectionContextProvider>
+        
+        
       </body>
     </html>
   );

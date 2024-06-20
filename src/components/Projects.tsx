@@ -1,3 +1,5 @@
+"use client";
+
 // Imports
 import {
   Tooltip,
@@ -8,7 +10,6 @@ import {
 import {
   Card,
   CardContent,
-  CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
@@ -17,10 +18,16 @@ import { projects } from "@/lib/data";
 import Image from 'next/image';
 import { Button } from "./ui/button";
 import Link from "next/link";
+import { useSectionInView } from "@/lib/hooks";
 
 const Projects = () => {
+  const { ref } = useSectionInView({ 
+    sectionName: "projects", 
+    threshold: 0.10
+  });
+
   return (
-    <section className="md:m-16 my-16 mx-0 flex flex-col items-center w-3/5">
+    <section ref={ref} id="projects" className="md:m-16 my-16 mx-0 flex flex-col items-center w-3/5 scroll-mt-24">
       <h2 className="text-3xl font-medium capitalize mb-8">My Projects</h2>
 
       <div className="flex flex-col gap-5">
@@ -98,7 +105,7 @@ const Projects = () => {
                 height="0"
                 sizes="100vw"
                 alt={project.title}
-                className="lg:rounded-l-none rounded-lg shadow-2xl object-cover w-auto lg:w-[60%] h-auto transition group-hover:scale-[1.05] lg:group-hover:-rotate-2"
+                className="lg:rounded-l-none rounded-lg shadow-2xl object-cover w-auto lg:w-[60%] h-auto transition group-hover:scale-110 lg:group-hover:scale-[1.05] group-hover:-rotate-2"
                 style={{ zIndex: "-1" }}
               />
             </div>
