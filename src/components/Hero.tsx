@@ -20,7 +20,7 @@ const Hero = () => {
       <div className="flex flex-col md:mx-28 mx-16 md:pb-16 pt-16 pb-[400px] md:pt-48 lg:pt-96 md:pr-[38%] md:items-start items-center gap-5">
         {/* Intro */}
         <p className="md:text-3xl text-2xl text-white md:text-left text-center" style={{ zIndex: 5 }}>
-          Hi, <span className="font-bold">I&apos;m Lyco</span>! I&apos;m a <span className="font-bold">Front End Developer</span> and a <span className="font-bold">UI/UX designer</span> based on the Philippines. I am passionate in <span className="font-bold">designing and building things.</span>
+          Hi, <span className="font-bold">I&apos;m Lyco</span>! I&apos;m a <span className="font-bold">Front End Developer</span> and a <span className="font-bold">UI/UX designer</span> based in the Philippines. I am passionate in <span className="font-bold">designing and building things.</span>
         </p>
 
         {/* Buttons */}
