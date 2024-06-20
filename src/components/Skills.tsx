@@ -8,7 +8,7 @@ import Image from 'next/image';
 const Skills = () => {
   const { ref } = useSectionInView({ 
     sectionName: "skills", 
-    threshold: 0.10
+    threshold: 0.75
   });
 
   return (
