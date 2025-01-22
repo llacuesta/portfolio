@@ -129,6 +129,7 @@ const Hero = () => {
         }`}
       >
         <Image
+          unoptimized
           src="/touch_gesture.gif"
           width={75}
           height={75}
