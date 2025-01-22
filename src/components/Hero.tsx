@@ -13,6 +13,7 @@ import { Canvas } from '@react-three/fiber';
 import { Environment, CameraControls } from "@react-three/drei";
 import { Vector3 } from 'three';
 import Model from './ui/model';
+import Background from './ui/background';
 
 const Hero = () => {
   const [showOverlay, setShowOverlay] = useState(false);
@@ -21,11 +22,24 @@ const Hero = () => {
   const foregroundCameraRef = useRef<CameraControls | null>(null);
   const backgroundCameraRef = useRef<CameraControls | null>(null);
 
+  // ref for auto scroll on navigation press
   const { ref } = useSectionInView({ 
     sectionName: "home", 
     threshold: 0.75
   });
 
+  // overlay
+  useEffect(() => {
+    if (modelRendered) {
+      const timer = setTimeout(() => {
+        setShowOverlay(false);
+      }, 5000);
+  
+      return () => clearTimeout(timer);
+    }
+  }, [modelRendered]);
+
+  // sync background camera on model movement
   const syncCameras = () => {
     if (foregroundCameraRef.current && backgroundCameraRef.current) {
       const foregroundControls = foregroundCameraRef.current;
@@ -47,18 +61,8 @@ const Hero = () => {
     }
   };
 
+  // camera initialization
   useEffect(() => {
-    if (modelRendered) {
-      const timer = setTimeout(() => {
-        setShowOverlay(false);
-      }, 5000);
-  
-      return () => clearTimeout(timer);
-    }
-  }, [modelRendered]);
-
-  useEffect(() => {
-    // Initialize the cameras
     const initializeForegroundCamera = () => {
       if (foregroundCameraRef.current) {
         foregroundCameraRef.current.truck(0, -7.5, false);
@@ -136,12 +140,7 @@ const Hero = () => {
 
       <div className='absolute w-full h-full z-0'>
         <Canvas>
-          <CameraControls
-            mouseButtons={{ left: 0, middle: 0, right: 0, wheel: 0 }}
-            ref={backgroundCameraRef}
-            maxPolarAngle={(Math.PI * 31) / 60}
-            minPolarAngle={(Math.PI * 31) / 60}
-          />
+          <Background bgRef={backgroundCameraRef} />
           <Environment files="./bg.hdr" background />
         </Canvas>
       </div>
