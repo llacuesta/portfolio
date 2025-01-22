@@ -113,7 +113,7 @@ const Hero = () => {
 
           {/* Foreground camera */}
           <CameraControls
-            mouseButtons={{ left: 1, middle: 0, right: 2, wheel: 0 }}
+            mouseButtons={{ left: 1, middle: 0, right: 0, wheel: 0 }}
             ref={foregroundCameraRef}
             maxPolarAngle={(Math.PI * 31) / 60}
             minPolarAngle={(Math.PI * 31) / 60}
