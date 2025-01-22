@@ -65,7 +65,7 @@ const Hero = () => {
   useEffect(() => {
     const initializeForegroundCamera = () => {
       if (foregroundCameraRef.current) {
-        foregroundCameraRef.current.truck(0, -15.5, false);
+        foregroundCameraRef.current.truck(0, -15, false);
         setShowOverlay(true);
       } else {
         requestAnimationFrame(initializeForegroundCamera);
