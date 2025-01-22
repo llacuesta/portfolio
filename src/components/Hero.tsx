@@ -65,7 +65,7 @@ const Hero = () => {
   useEffect(() => {
     const initializeForegroundCamera = () => {
       if (foregroundCameraRef.current) {
-        foregroundCameraRef.current.truck(0, -7.5, false);
+        foregroundCameraRef.current.truck(0, -9.5, false);
         setShowOverlay(true);
       } else {
         requestAnimationFrame(initializeForegroundCamera);
@@ -113,7 +113,7 @@ const Hero = () => {
 
           {/* Foreground camera */}
           <CameraControls
-            mouseButtons={{ left: 1, middle: 0, right: 0, wheel: 0 }}
+            mouseButtons={{ left: 1, middle: 0, right: 2, wheel: 0 }}
             ref={foregroundCameraRef}
             maxPolarAngle={(Math.PI * 31) / 60}
             minPolarAngle={(Math.PI * 31) / 60}
