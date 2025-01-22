@@ -1,8 +1,9 @@
 "use client";
 
 // Imports
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import Link from "next/link";
+import Image from 'next/image';
 import { Button } from "./ui/button"
 import { HiDownload } from "react-icons/hi"
 import { FaLinkedinIn } from "react-icons/fa";
@@ -14,6 +15,9 @@ import { Vector3 } from 'three';
 import Model from './ui/model';
 
 const Hero = () => {
+  const [showOverlay, setShowOverlay] = useState(false);
+  const [modelRendered, setModelRendered] = useState(false);
+
   const foregroundCameraRef = useRef<CameraControls | null>(null);
   const backgroundCameraRef = useRef<CameraControls | null>(null);
 
@@ -44,10 +48,21 @@ const Hero = () => {
   };
 
   useEffect(() => {
+    if (modelRendered) {
+      const timer = setTimeout(() => {
+        setShowOverlay(false);
+      }, 5000);
+  
+      return () => clearTimeout(timer);
+    }
+  }, [modelRendered]);
+
+  useEffect(() => {
     // Initialize the cameras
     const initializeForegroundCamera = () => {
       if (foregroundCameraRef.current) {
         foregroundCameraRef.current.truck(0, -7.5, false);
+        setShowOverlay(true);
       } else {
         requestAnimationFrame(initializeForegroundCamera);
       }
@@ -60,7 +75,6 @@ const Hero = () => {
         requestAnimationFrame(initializeBackgroundCamera);
       }
     };
-
 
     initializeForegroundCamera();
     initializeBackgroundCamera();
@@ -100,9 +114,24 @@ const Hero = () => {
             maxPolarAngle={(Math.PI * 31) / 60}
             minPolarAngle={(Math.PI * 31) / 60}
             onChange={syncCameras}
+            onUpdate={() => setModelRendered(true)}
           />
           <Environment files="./bg.hdr" />
         </Canvas>
+      </div>
+
+      <div className={`absolute z-10 flex text-white text-xs py-10 w-full md:w-1/2 flex-col items-center transition-opacity duration-500 ${
+          showOverlay ? "opacity-100" : "opacity-0 pointer-events-none"
+        }`}
+      >
+        <Image
+          src="/touch_gesture.gif"
+          width={75}
+          height={75}
+          alt="touch"
+          className="relative z-10"
+        />
+        <p className="font-semibold relative z-10">drag to rotate</p>
       </div>
 
       <div className='absolute w-full h-full z-0'>
