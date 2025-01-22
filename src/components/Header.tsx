@@ -14,7 +14,7 @@ const Header = () => {
         {/* Logo */}
         <Link href="/" className="hidden md:flex flex-col md:flex-row md:gap-4">
           <h1 className="text-2xl font-semibold text-nowrap">Lyco Lacuesta</h1>
-          <span className="md:self-end text-light pr-8 text-nowrap">Full Stack Web Developer</span>
+          <span className="md:self-end text-light pr-8 text-nowrap">Full Stack Developer</span>
         </Link>
 
         {/* Desktop Only Nav */}

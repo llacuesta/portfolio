@@ -99,15 +99,27 @@ const Projects = () => {
                   })}
                 </CardFooter>
               </Card>
-              <Image 
-                src={project.imageUrl}
-                width="0"
-                height="0"
-                sizes="100vw"
-                alt={project.title}
-                className="lg:rounded-l-none rounded-lg shadow-2xl object-cover w-auto lg:w-[60%] h-auto transition group-hover:scale-110 lg:group-hover:scale-[1.05] group-hover:-rotate-2"
-                style={{ zIndex: "-1" }}
-              />
+
+              <div 
+                className="w-full md:min-w-[400px] lg:rounded-l-none rounded-lg shadow-2xl object-cover lg:w-[60%] transition group-hover:scale-110 lg:group-hover:scale-[1.05] group-hover:-rotate-2" 
+                style={{ zIndex: "-1" }}>
+                {project.image ? (
+                  <Image 
+                    src={project.imageUrl}
+                    width="0"
+                    height="0"
+                    sizes="100vw"
+                    alt={project.title}
+                    className="h-full w-full object-cover"
+                  />
+                ) : (
+                  <video playsInline autoPlay loop muted className="h-full w-full object-cover">
+                    <source src={project.imageUrl} type="video/webm" />
+                    Your browser does not support the video tag.
+                  </video>
+                )}
+              </div>
+
             </div>
           )
         })}

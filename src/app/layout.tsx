@@ -16,7 +16,7 @@ const jetbrains = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Lyco Lacuesta | Full Stack Web Developer",
+  title: "Lyco Lacuesta | Full Stack Developer",
   description: "Updated personal portfolio",
 };
 

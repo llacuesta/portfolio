@@ -42,11 +42,16 @@ export const projects = [
         icon: "/logos/tailwind.svg",
       }, 
       {
+        tech: "Three.js",
+        icon: "/logos/threejs.svg",
+      },
+      {
         tech: "Shadcn/UI",
         icon: "/logos/shadcn.svg",
       },
     ],
     imageUrl: "/projects/portfolio.png",
+    image: true,
     links: [
       {
         tooltip: "You're Here!",
@@ -86,6 +91,7 @@ export const projects = [
       },
     ],
     imageUrl: "/projects/coachella.png",
+    image: true,
     links: [
       {
         tooltip: "GitHub",
@@ -108,6 +114,7 @@ export const projects = [
       }, 
     ],
     imageUrl: "/projects/sprint.png",
+    image: true,
     links: [
       {
         tooltip: "Figma",
@@ -142,6 +149,7 @@ export const projects = [
       }, 
     ],
     imageUrl: "/projects/elbnb.png",
+    image: true,
     links: [
       {
         tooltip: "Open",
@@ -164,7 +172,8 @@ export const projects = [
         icon: "/logos/java.svg",
       }, 
     ],
-    imageUrl: "/projects/bounceprince.png",
+    imageUrl: "/projects/bounceprince.webm",
+    image: false,
     links: [
       {
         tooltip: "GitHub",
@@ -187,6 +196,7 @@ export const projects = [
       }, 
     ],
     imageUrl: "/projects/invasion.png",
+    image: true,
     links: [
       {
         tooltip: "GitHub",
@@ -235,6 +245,7 @@ export const skills = [
     skills: [
       { name: "Express.js", icon: "/logos/express.svg" },
       { name: "Node.js", icon: "/logos/node.svg" },
+      { name: "NestJS", icon: "/logos/nestjs.svg" },
       { name: "MySQL", icon: "/logos/mysql.svg" },
       { name: "MongoDB", icon: "/logos/mongodb.svg" },
     ],
@@ -252,6 +263,13 @@ export const skills = [
 
 export const experience = [
   {
+    role: "Full Stack Web Developer Intern",
+    company: "Old St. Labs",
+    startYear: "Sept 2024",
+    endYear: "Oct 2024",
+    description: "Participated in an internship program where we were trained on Full Stack Web Development technologies such as NextJS, NestJS, and the AWS Platform. Worked on an internal web application that uses said technologies with AI integration as part of our project immersion."
+  },
+  {
     role: "Front End Web Developer Intern",
     company: "LoPhils Inc.",
     startYear: "July 2023",
@@ -262,7 +280,7 @@ export const experience = [
     role: "College Education",
     company: "University of The Philippines - Los Baños",
     startYear: "June 2020",
-    endYear: "Present",
-    description: "Currently pursuing Bachelor of Science in Computer Science."
+    endYear: "Dec 2024",
+    description: "Graduated Bachelor of Science in Computer Science."
   },
 ]
